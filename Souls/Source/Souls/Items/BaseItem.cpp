@@ -1,26 +1,27 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Character/BaseCharacter.h"
+#include "Items/BaseItem.h"
 
 // Sets default values
-ABaseCharacter::ABaseCharacter()
+ABaseItem::ABaseItem()
 {
- 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+ 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 }
 
 // Called when the game starts or when spawned
-void ABaseCharacter::BeginPlay()
+void ABaseItem::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
 // Called every frame
-void ABaseCharacter::Tick(float DeltaTime)
+void ABaseItem::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
 }
+

@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+
 #include "BaseCharacter.generated.h"
 
 UCLASS()
@@ -11,19 +12,32 @@ class SOULS_API ABaseCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = AnimationValue, meta=(AllowPrivateAccess=true))
+	bool bMirror;
+
+	UPROPERTY(EditDefaultsOnly, Category=AnimationValue, meta=(AllowPrivateAccess=true))
+	bool bAiming;
+
 public:
-	// Sets default values for this character's properties
 	ABaseCharacter();
 
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
-public:	
-	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+protected:
+	virtual void BeginPlay() override;
+
+public:
+
+#pragma region Getter
+	FORCEINLINE bool IsAiming() { return bAiming; }
+
+#pragma endregion Getter
+
+
+#pragma region Setter
+	FORCEINLINE void SetMirror(bool InValue) { bMirror = InValue; }
+
+#pragma endregion Setter
+
 
 };
