@@ -4,9 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "Character/BaseCharacter.h"
+
 #include "MainCharacter.generated.h"
 
 class UControllerInputComp;
+class USpringArmComponent;
+class UCameraComponent;
 
 /**
  * 
@@ -16,6 +19,11 @@ class SOULS_API AMainCharacter : public ABaseCharacter
 {
 	GENERATED_BODY()
 	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+	USpringArmComponent* SpringArm;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+	UCameraComponent* FollowCamera;
 
 	UPROPERTY(VisibleDefaultsOnly)
 	TObjectPtr<UControllerInputComp> ControllerInputComp;
@@ -31,5 +39,12 @@ protected:
 public:
 	virtual void Tick(float DeltaTime) override;
 
+	virtual void PossessedBy(AController* NewController) override;
+	virtual void OnRep_PlayerState() override;
 
+	FORCEINLINE class USpringArmComponent* GetSpringArm() const { return SpringArm; }
+	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+
+private:
+	void InitAbilityInfo();
 };

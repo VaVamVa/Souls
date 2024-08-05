@@ -36,8 +36,12 @@ public:
 	}
 
 	template<typename T>
-	static TSubclassOf<T> GetAssetFromConstructor(FString Path)
+	static TObjectPtr<T> GetAssetFromConstructor(FString Path)
 	{
+		ConstructorHelpers::FObjectFinder<T> Finder(*Path);
+
+		if (Finder.Succeeded())
+			return Finder.Object;
 		return nullptr;
 	}
 

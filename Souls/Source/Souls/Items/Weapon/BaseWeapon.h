@@ -4,6 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+
+#include "FWeaponTypes_Manual.h"
+
 #include "BaseWeapon.generated.h"
 
 UCLASS()

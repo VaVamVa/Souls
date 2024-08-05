@@ -17,6 +17,9 @@ class SOULS_API UControllerInputComp : public UActorComponent
 {
 	GENERATED_BODY()
 
+	UPROPERTY()
+	TObjectPtr<AMainCharacter> OwnerCharacter;
+
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category=Controller, meta=(AllowPrivateAccess=true))
 	TObjectPtr<APlayerController> Controller;
 
@@ -24,10 +27,10 @@ class SOULS_API UControllerInputComp : public UActorComponent
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = GameMode, meta=(AllowPrivateAccess=true))
 	TObjectPtr<UInputMappingContext> DefaultMappingContext;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Default, meta=(AllowPrivateAccess=true))
+	UPROPERTY(EditDefaultsOnly, Category = Default, meta=(AllowPrivateAccess=true))
 	TObjectPtr<UInputAction> Move;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Default, meta=(AllowPrivateAccess=true))
+	UPROPERTY(EditDefaultsOnly, Category = Default, meta=(AllowPrivateAccess=true))
 	TObjectPtr<UInputAction> View;
 	#pragma endregion
 
@@ -35,16 +38,16 @@ class SOULS_API UControllerInputComp : public UActorComponent
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = GameMode, meta = (AllowPrivateAccess = true))
 	TObjectPtr<UInputMappingContext> CombatMappingContext;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Default, meta=(AllowPrivateAccess=true))
+	UPROPERTY(EditDefaultsOnly, Category = Default, meta=(AllowPrivateAccess=true))
 	TObjectPtr<UInputAction> MouseLeft;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Default, meta = (AllowPrivateAccess = true))
+	UPROPERTY(EditDefaultsOnly, Category = Default, meta = (AllowPrivateAccess = true))
 	TObjectPtr<UInputAction> MouseRight;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Default, meta = (AllowPrivateAccess = true))
+	UPROPERTY(EditDefaultsOnly, Category = Default, meta = (AllowPrivateAccess = true))
 	TObjectPtr<UInputAction> Heavy;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Default, meta = (AllowPrivateAccess = true))
+	UPROPERTY(EditDefaultsOnly, Category = Default, meta = (AllowPrivateAccess = true))
 	TObjectPtr<UInputAction> Special;
 	#pragma endregion
 
@@ -73,9 +76,7 @@ private:  // Make Mapping Contexts
 
 	
 
-private:  // Properties
-	UPROPERTY()
-	TObjectPtr<AMainCharacter> OwnerCharacter;
+private:
 
 
 };

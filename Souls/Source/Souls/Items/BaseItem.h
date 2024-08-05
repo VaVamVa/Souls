@@ -4,6 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+
+#include "FItemTypes_Manual.h"
+
+class StaticMeshComponent;
+
 #include "BaseItem.generated.h"
 
 UCLASS()
@@ -11,16 +16,30 @@ class SOULS_API ABaseItem : public AActor
 {
 	GENERATED_BODY()
 	
+	UPROPERTY(EditDefaultsOnly, Category = Datas, meta = (AllowPrivateAccess = true))
+	FString ID;  // 00-00-000
+
+	UPROPERTY(EditDefaultsOnly, Category = Mesh, meta = (AllowPrivateAccess = true))
+	TObjectPtr<UStaticMeshComponent> Mesh;
+
 public:	
-	// Sets default values for this actor's properties
 	ABaseItem();
 
 protected:
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+protected:
+	void SetID(FString InID);
 
+public:	
+
+#pragma region Getter
+	FORCEINLINE FString GetID() { return ID; }
+
+#pragma endregion Getter
+
+
+#pragma region Setter
+
+#pragma endregion Setter
 };

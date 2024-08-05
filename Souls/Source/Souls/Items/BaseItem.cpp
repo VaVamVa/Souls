@@ -6,9 +6,7 @@
 // Sets default values
 ABaseItem::ABaseItem()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
-
+	PrimaryActorTick.bCanEverTick = false;
 }
 
 // Called when the game starts or when spawned
@@ -18,10 +16,23 @@ void ABaseItem::BeginPlay()
 	
 }
 
-// Called every frame
-void ABaseItem::Tick(float DeltaTime)
+void ABaseItem::SetID(FString InID)
 {
-	Super::Tick(DeltaTime);
+	ID = InID;
+	uint32 IntValue = FCString::Atoi(*InID.LeftChop(2));
+	uint8 Category = static_cast<uint8>(IntValue);
 
+	IntValue = FCString::Atoi(*InID.LeftChop(2));
+	uint8 Group = static_cast<uint8>(IntValue);
+
+	IntValue = FCString::Atoi(*InID);
+	if (IntValue < 0 || IntValue > 255)
+	{
+		// ¿¹¿Ü
+	}
+	else
+	{
+		uint8 Number = static_cast<uint8>(IntValue);
+	}
 }
 

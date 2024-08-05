@@ -2,13 +2,21 @@
 
 #include "SoulsGameMode.h"
 #include "UObject/ConstructorHelpers.h"
+#include "Widgets/PlayerHUD.h"
+#include "Character/MainCharacter/MainCharacterState.h"
+
+#include "Utilities/Helper.h"
 
 ASoulsGameMode::ASoulsGameMode()
 {
 	// set default pawn class to our Blueprinted character
-	static ConstructorHelpers::FClassFinder<APawn> PlayerPawnBPClass(TEXT("/Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter"));
+	static ConstructorHelpers::FClassFinder<APawn> PlayerPawnBPClass(TEXT("/Game/Characters/MainCharacter/BP_MainCharacter"));
 	if (PlayerPawnBPClass.Class != NULL)
 	{
-		DefaultPawnClass;
+		DefaultPawnClass = PlayerPawnBPClass.Class;
+
+		PlayerStateClass = Helper::GetClassFromConstructor<AMainCharacterState>("/Game/Characters/MainCharacter/BP_MainCharacterState");
+
+		HUDClass = APlayerHUD::StaticClass();
 	}
 }

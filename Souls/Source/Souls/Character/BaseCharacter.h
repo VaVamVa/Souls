@@ -4,19 +4,31 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "AbilitySystemInterface.h"
+
+class UAbilitySystemComponent;
+class UAttributeSet;
 
 #include "BaseCharacter.generated.h"
 
-UCLASS()
-class SOULS_API ABaseCharacter : public ACharacter
+UCLASS(Abstract)
+class SOULS_API ABaseCharacter : public ACharacter, public IAbilitySystemInterface
 {
 	GENERATED_BODY()
+
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = AnimationValue, meta=(AllowPrivateAccess=true))
 	bool bMirror;
 
 	UPROPERTY(EditDefaultsOnly, Category=AnimationValue, meta=(AllowPrivateAccess=true))
 	bool bAiming;
+
+protected:
+	UPROPERTY(EditDefaultsOnly, Category=GAS, meta=(AllowPrivateAccess=true))
+	TObjectPtr<UAbilitySystemComponent> ASComp;
+	
+	UPROPERTY(EditDefaultsOnly, Category=GAS, meta=(AllowPrivateAccess=true))
+	TObjectPtr<UAttributeSet> AttributeSet;
 
 public:
 	ABaseCharacter();
@@ -29,7 +41,9 @@ protected:
 public:
 
 #pragma region Getter
-	FORCEINLINE bool IsAiming() { return bAiming; }
+	UAbilitySystemComponent* GetAbilitySystemComponent() const override;
+	FORCEINLINE UAttributeSet* GetAttributeSet() const { return AttributeSet; }
+	FORCEINLINE bool IsAiming() const { return bAiming; }
 
 #pragma endregion Getter
 
@@ -39,5 +53,8 @@ public:
 
 #pragma endregion Setter
 
+
+
+	// IAbilitySystemInterface을(를) 통해 상속됨
 
 };

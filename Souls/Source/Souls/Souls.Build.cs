@@ -12,8 +12,9 @@ public class Souls : ModuleRules
 		PublicDependencyModuleNames.AddRange(new string[] { 
 			"Core", "CoreUObject", "Engine",
 			"InputCore", "EnhancedInput",
-            "AnimGraphRuntime",
-            "AIModule"
+            "AnimationCore", "AnimGraphRuntime",
+            "AIModule",
+            "GameplayAbilities", "GameplayTags", "GameplayTasks"
         });
 
 		PublicIncludePaths.Add(ModuleDirectory);
