@@ -14,3 +14,4 @@ Unreal Engine을 이용한 소울류 모작
 
 ## GAS
 - [GAS_Reference_Blog](https://velog.io/@groot616/3.-Attributes)
+- [GAS_AttributeSt_Blog](https://unialgames.tistory.com/entry/UnrealEngineGamePlayAbilitySystemChapter2)
