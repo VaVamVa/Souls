@@ -58,7 +58,7 @@ enum class EEquipment : uint8
 	G01_Head				UMETA(DisplayName = "Head"),
 	G02_Chest				UMETA(DisplayName = "Chest"),
 	G03_Hand				UMETA(DisplayName = "Hand"),
-	G04_Lag					UMETA(DisplayName = "Lag"),
+	G04_Leg					UMETA(DisplayName = "Lag"),
 };
 
 UENUM(Blueprintable)

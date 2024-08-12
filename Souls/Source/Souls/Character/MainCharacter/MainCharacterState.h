@@ -7,7 +7,8 @@
 #include "AbilitySystemInterface.h"
 
 class UAbilitySystemComponent;
-class UAttributeSet;
+class USoulsAttributeSet;
+struct FOnAttributeChangeData;
 
 #include "MainCharacterState.generated.h"
 
@@ -24,13 +25,15 @@ protected:
 	TObjectPtr<UAbilitySystemComponent> ASComp;
 
 	UPROPERTY(EditDefaultsOnly, Category = GAS, meta = (AllowPrivateAccess = true))
-	TObjectPtr<UAttributeSet> AttributeSet;
+	TObjectPtr<USoulsAttributeSet> AttributeSet;
 
 public:
 	AMainCharacterState();
 
 	// IAbilitySystemInterface을(를) 통해 상속됨
 	UAbilitySystemComponent* GetAbilitySystemComponent() const override;
-	FORCEINLINE UAttributeSet* GetAttributeSet() const { return AttributeSet; }
+	FORCEINLINE USoulsAttributeSet* GetAttributeSet() const { return AttributeSet; }
+
+	virtual void ChangeHealth(const FOnAttributeChangeData& Data);
 
 };

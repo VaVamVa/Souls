@@ -7,7 +7,7 @@
 
 #include "FItemTypes_Manual.h"
 
-class StaticMeshComponent;
+class UStaticMeshComponent;
 
 #include "BaseItem.generated.h"
 
@@ -17,7 +17,7 @@ class SOULS_API ABaseItem : public AActor
 	GENERATED_BODY()
 	
 	UPROPERTY(EditDefaultsOnly, Category = Datas, meta = (AllowPrivateAccess = true))
-	FString ID;  // 00-00-000
+	FString ID;  // 00-00-0000
 
 	UPROPERTY(EditDefaultsOnly, Category = Mesh, meta = (AllowPrivateAccess = true))
 	TObjectPtr<UStaticMeshComponent> Mesh;

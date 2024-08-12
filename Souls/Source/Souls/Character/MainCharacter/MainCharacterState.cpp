@@ -18,9 +18,15 @@ AMainCharacterState::AMainCharacterState()
 
 	AttributeSet = CreateDefaultSubobject<USoulsAttributeSet>("AttributeSet");
 
+	ASComp->GetGameplayAttributeValueChangeDelegate(AttributeSet->GetCurHpAttribute()).AddUObject(this, &AMainCharacterState::ChangeHealth);
+
 }
 
 UAbilitySystemComponent* AMainCharacterState::GetAbilitySystemComponent() const
 {
 	return ASComp;
+}
+
+void AMainCharacterState::ChangeHealth(const FOnAttributeChangeData& Data)
+{
 }
