@@ -5,12 +5,5 @@
 
 ABaseEquipment::ABaseEquipment()
 {
-	if (bSkeletalMesh)
-	{
 
-	}
-	else
-	{
-
-	}
 }

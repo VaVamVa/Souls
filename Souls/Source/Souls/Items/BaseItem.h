@@ -7,7 +7,6 @@
 
 #include "FItemTypes_Manual.h"
 
-class UStaticMeshComponent;
 
 #include "BaseItem.generated.h"
 
@@ -17,10 +16,7 @@ class SOULS_API ABaseItem : public AActor
 	GENERATED_BODY()
 	
 	UPROPERTY(EditDefaultsOnly, Category = Datas, meta = (AllowPrivateAccess = true))
-	FString ID;  // 00-00-0000
-
-	UPROPERTY(EditDefaultsOnly, Category = Mesh, meta = (AllowPrivateAccess = true))
-	TObjectPtr<UStaticMeshComponent> Mesh;
+	TArray<uint8> ID;  // Category-Group-Number
 
 public:	
 	ABaseItem();
@@ -29,17 +25,29 @@ protected:
 	virtual void BeginPlay() override;
 
 protected:
-	void SetID(FString InID);
 
 public:	
+#pragma region Setter
+	bool SetID(FString InID);
+	bool SetID(int32 InID);
+	bool SetID(uint8 Category, uint8 Group, uint8 Number);
+
+	void SetMesh(USkeletalMesh* InSkeletalMesh);
+	void SetMesh(UStaticMesh* InStaticMesh);
+
+
+#pragma endregion Setter
+
 
 #pragma region Getter
-	FORCEINLINE FString GetID() { return ID; }
+	FORCEINLINE TArray<uint8> GetID() { return ID; }
+
+	bool GetMeshComponent(USkeletalMeshComponent* &OutSkeletalMeshComp) const;
+	bool GetMeshComponent(UStaticMeshComponent* &OutStaticMeshComp) const;
+	UFUNCTION(BlueprintCallable, Category = "Getter")
+	const UMeshComponent* GetMeshComponent() const;
 
 #pragma endregion Getter
 
 
-#pragma region Setter
-
-#pragma endregion Setter
 };

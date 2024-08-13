@@ -11,7 +11,15 @@ Unreal Engine을 이용한 소울류 모작
 
 2. 기본적인 Character 생성.
 
+## UML
+- [UML_DOCS](https://www.uml-diagrams.org/class.html)
 
 ## GAS
 - [GAS_Reference_Blog](https://velog.io/@groot616/3.-Attributes)
 - [GAS_AttributeSt_Blog](https://unialgames.tistory.com/entry/UnrealEngineGamePlayAbilitySystemChapter2)
+
+## Save And Load
+- [Saving_And_Loading_DOCS](https://dev.epicgames.com/documentation/en-us/unreal-engine/saving-and-loading-your-game-in-unreal-engine)
+
+## Basic
+- [Youtube_Enigma_dev](https://www.youtube.com/@enigma_dev/playlists)

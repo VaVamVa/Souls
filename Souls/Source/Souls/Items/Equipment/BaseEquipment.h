@@ -14,22 +14,20 @@ class SOULS_API ABaseEquipment : public ABaseItem
 {
 	GENERATED_BODY()
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta=(AllowPrivateAccess=true))
-	TObjectPtr<USkeletalMesh> SkeletalMesh;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, meta = (AllowPrivateAccess = true))
-	TObjectPtr<UStaticMesh> StaticMesh;
 
 protected:
-	UPROPERTY()
-	bool bSkeletalMesh;
 	
 public:
 	ABaseEquipment();
 
-	USkeletalMesh* GetSkeletalMesh();
+
+#pragma region Getter
+	
+#pragma endregion Getter
 
 protected:
+
 
 private:
 };
