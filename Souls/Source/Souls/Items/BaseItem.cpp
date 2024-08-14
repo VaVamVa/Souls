@@ -44,7 +44,17 @@ bool ABaseItem::SetID(FString InID)
 
 bool ABaseItem::SetID(int32 InID)
 {
-	ID.Reset();
+	// Initialize ID Array
+	if (ID.IsValidIndex(EID::Category))
+		ID[EID::Category] = 0;
+	else ID.Emplace(0);
+	if (ID.IsValidIndex(EID::Group))
+		ID[EID::Group] = 0;
+	else ID.Emplace(0);
+	if (ID.IsValidIndex(EID::Number))
+		ID[EID::Number] = 0;
+	else ID.Emplace(0);
+
 	if (InID >= 10000000)
 		return false;
 	if (InID % 1000 < 0 || InID % 1000 > 255)
@@ -56,14 +66,16 @@ bool ABaseItem::SetID(int32 InID)
 	InID *= 0.01;
 	uint8 Category = static_cast<uint8>(InID % 100);
 
-	return SetID(Category, Group, Number);
+	return SetID(Number, Group, Category);
 }
 
-bool ABaseItem::SetID(uint8 Category, uint8 Group, uint8 Number)
+bool ABaseItem::SetID(uint8 InNumber, uint8 InGroup, uint8 InCategory)
 {
-	ID.Emplace(Category);
-	ID.Emplace(Group);
-	ID.Emplace(Number);
+	if (InNumber == 0) return false;
+
+	if (InCategory != 0) ID[EID::Category] = InCategory;
+	if (InGroup != 0) ID[EID::Group] = InGroup;
+	if (InNumber != 0) ID[EID::Number] = InNumber;
 	
 	return true;
 }

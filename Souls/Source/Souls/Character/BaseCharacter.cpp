@@ -3,6 +3,8 @@
 
 #include "Character/BaseCharacter.h"
 
+#include "Items/Weapon/BaseWeapon.h"
+
 // Sets default values
 ABaseCharacter::ABaseCharacter()
 {

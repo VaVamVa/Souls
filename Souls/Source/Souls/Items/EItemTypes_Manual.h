@@ -2,6 +2,13 @@
 
 #include "CoreMinimal.h"
 
+enum EID
+{
+	Category = 0,
+	Group,
+	Number
+};
+
 
 //// Item Category
 
@@ -43,12 +50,15 @@ UENUM(Blueprintable)
 enum class EWeapon : uint8
 {
 	G00_None				UMETA(Hidden, DisplayName = "None"),
-	G01_Sword				UMETA(DisplayName = "Sword"),
-	G02_GreatSword			UMETA(DisplayName = "GreatSword"),
-	G03_Fist				UMETA(DisplayName = "Fist"),
-	G04_Shield				UMETA(DisplayName = "Shield"),
-	G05_Staff				UMETA(DisplayName = "Staff"),
-	G06_Halidom				UMETA(DisplayName = "Halidom")
+	G01_Fist				UMETA(DisplayName = "Fist"),
+	G02_Halidom				UMETA(DisplayName = "Halidom"),
+	G03_Staff				UMETA(DisplayName = "Staff"),
+	G04_Bow					UMETA(DisplayName = "Bow"),
+	G05_Crossbow			UMETA(DisplayName = "Crossbow"),
+	G06_Shield				UMETA(DisplayName = "Shield"),
+	G07_Sword				UMETA(DisplayName = "Sword"),
+	G08_GreatSword			UMETA(DisplayName = "GreatSword"),
+	G09_Spear				UMETA(DisplayName = "Spear")
 };
 
 UENUM(Blueprintable)

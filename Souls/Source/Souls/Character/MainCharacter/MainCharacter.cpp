@@ -5,15 +5,23 @@
 
 #include "Utilities/Helper.h"
 
+// Mesh
 #include "Components/CapsuleComponent.h"
 #include "Components/SkeletalMeshComponent.h"
+
+// Camera
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 
+// Controller
 #include "GameFramework/Controller.h"
 #include "EnhancedInputComponent.h"
 #include "Input/ControllerInputComp.h"
 
+// Actor Component
+#include "ActorComponents/EquipmentComponent.h"
+
+// GAS
 #include "GAS/SoulsAbilitySystemComponent.h"
 #include "GAS/SoulsAttributeSet.h"
 #include "MainCharacterState.h"

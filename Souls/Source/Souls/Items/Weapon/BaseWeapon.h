@@ -3,16 +3,15 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
-
-#include "FWeaponTypes_Manual.h"
+#include "Items/BaseItem.h"
 
 #include "BaseWeapon.generated.h"
 
 UCLASS()
-class SOULS_API ABaseWeapon : public AActor
+class SOULS_API ABaseWeapon : public ABaseItem
 {
 	GENERATED_BODY()
+
 	
 public:	
 	// Sets default values for this actor's properties

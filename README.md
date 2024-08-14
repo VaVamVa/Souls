@@ -15,8 +15,10 @@ Unreal Engine을 이용한 소울류 모작
 - [UML_DOCS](https://www.uml-diagrams.org/class.html)
 
 ## GAS
-- [GAS_Reference_Blog](https://velog.io/@groot616/3.-Attributes)
+- [GAS_CodeExample_Blog](https://velog.io/@groot616/3.-Attributes)
 - [GAS_AttributeSt_Blog](https://unialgames.tistory.com/entry/UnrealEngineGamePlayAbilitySystemChapter2)
+- [GAS_Translate_Blog](https://kkadalg.tistory.com/29)
+- [GAS_ProjectExample_Blog](https://hvvan.tistory.com/362)
 
 ## Save And Load
 - [Saving_And_Loading_DOCS](https://dev.epicgames.com/documentation/en-us/unreal-engine/saving-and-loading-your-game-in-unreal-engine)

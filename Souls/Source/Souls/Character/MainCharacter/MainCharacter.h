@@ -10,6 +10,7 @@
 class UControllerInputComp;
 class USpringArmComponent;
 class UCameraComponent;
+class UEquipmentComponent;
 
 /**
  * 
@@ -27,6 +28,9 @@ class SOULS_API AMainCharacter : public ABaseCharacter
 
 	UPROPERTY(VisibleDefaultsOnly)
 	TObjectPtr<UControllerInputComp> ControllerInputComp;
+
+	UPROPERTY(VisibleDefaultsOnly, meta=(AllowPrivateAccess=true))
+	TObjectPtr<UEquipmentComponent> EquipmentComp;
 
 public:
 	AMainCharacter();

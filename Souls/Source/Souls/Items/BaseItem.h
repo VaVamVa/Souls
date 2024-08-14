@@ -7,7 +7,6 @@
 
 #include "FItemTypes_Manual.h"
 
-
 #include "BaseItem.generated.h"
 
 UCLASS()
@@ -30,7 +29,7 @@ public:
 #pragma region Setter
 	bool SetID(FString InID);
 	bool SetID(int32 InID);
-	bool SetID(uint8 Category, uint8 Group, uint8 Number);
+	bool SetID(uint8 InNumber = 0, uint8 InGroup = 0, uint8 InCategory = 0);
 
 	void SetMesh(USkeletalMesh* InSkeletalMesh);
 	void SetMesh(UStaticMesh* InStaticMesh);
