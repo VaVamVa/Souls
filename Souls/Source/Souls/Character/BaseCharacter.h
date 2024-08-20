@@ -33,9 +33,6 @@ class SOULS_API ABaseCharacter : public ACharacter, public IAbilitySystemInterfa
 	UPROPERTY(EditDefaultsOnly, Category=AnimationValue, meta=(AllowPrivateAccess=true))
 	bool bAiming;
 
-	UPROPERTY(EditDefaultsOnly, Category=Weapon, meta=(AllowPrivateAccess=true))
-	TObjectPtr<ABaseWeapon> EquippedWeapon;
-
 protected:
 	UPROPERTY(EditDefaultsOnly, Category=GAS, meta=(AllowPrivateAccess=true))
 	TObjectPtr<UAbilitySystemComponent> ASComp;
@@ -52,12 +49,10 @@ protected:
 	virtual void BeginPlay() override;
 
 public:
-	void EquipWeapon();
-
 #pragma region Getter
 	UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 
-	FORCEINLINE ABaseWeapon* GetEquippedWeapon() { return EquippedWeapon; }
+
 	FORCEINLINE UAttributeSet* GetAttributeSet() const { return AttributeSet; }
 	FORCEINLINE bool IsAiming() const { return bAiming; }
 

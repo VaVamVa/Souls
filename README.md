@@ -25,3 +25,7 @@ Unreal Engine을 이용한 소울류 모작
 
 ## Basic
 - [Youtube_Enigma_dev](https://www.youtube.com/@enigma_dev/playlists)
+
+## Utilities
+- [Custom_Log](https://hyo-ue4study.tistory.com/382)
+    - [C_log](https://yesarang.tistory.com/74)

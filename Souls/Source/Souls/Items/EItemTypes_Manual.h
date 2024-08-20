@@ -62,7 +62,7 @@ enum class EWeapon : uint8
 };
 
 UENUM(Blueprintable)
-enum class EEquipment : uint8
+enum class EEquipmentParts : uint8
 {
 	G00_None				UMETA(Hidden, DisplayName = "None"),
 	G01_Head				UMETA(DisplayName = "Head"),

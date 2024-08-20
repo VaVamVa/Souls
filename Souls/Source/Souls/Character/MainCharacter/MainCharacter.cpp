@@ -4,6 +4,7 @@
 #include "Character/MainCharacter/MainCharacter.h"
 
 #include "Utilities/Helper.h"
+#include "Utilities/Debug.h"
 
 // Mesh
 #include "Components/CapsuleComponent.h"
@@ -44,6 +45,8 @@ AMainCharacter::AMainCharacter()
 void AMainCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+
+	Debug::CallLineInfo(CALL_INFO);
 }
 
 void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)

@@ -6,7 +6,10 @@
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 
+
+
 class ABaseEquipment;
+class ABaseWeapon;
 
 #include "EquipmentComponent.generated.h"
 
@@ -18,22 +21,37 @@ class SOULS_API UEquipmentComponent : public UActorComponent
 public:	
 	UEquipmentComponent();
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
+	UPROPERTY(EditDefaultsOnly, Category = Owner)
+	TObjectPtr<class ABaseCharacter> OwnerCharacter;
+
+	UPROPERTY(EditDefaultsOnly, Category = Equipment, BlueprintReadWrite, meta=(AllowPrivateAccess=true))
 	TObjectPtr<ABaseEquipment> Head;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, meta = (AllowPrivateAccess = true))
+	UPROPERTY(EditDefaultsOnly, Category = Equipment, BlueprintReadWrite, meta = (AllowPrivateAccess = true))
 	TObjectPtr<ABaseEquipment> Chest;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, meta = (AllowPrivateAccess = true))
+	UPROPERTY(EditDefaultsOnly, Category = Equipment, BlueprintReadWrite, meta = (AllowPrivateAccess = true))
 	TObjectPtr<ABaseEquipment> Hand;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, meta = (AllowPrivateAccess = true))
+	UPROPERTY(EditDefaultsOnly, Category = Equipment, BlueprintReadWrite, meta = (AllowPrivateAccess = true))
 	TObjectPtr<ABaseEquipment> Leg;
+
+	UPROPERTY(EditDefaultsOnly, Category = Weapon, meta = (AllowPrivateAccess = true))
+	TObjectPtr<ABaseWeapon> EquippedWeaponRight;
+
+	UPROPERTY(EditDefaultsOnly, Category = Weapon, meta = (AllowPrivateAccess = true))
+	TObjectPtr<ABaseWeapon> EquippedWeaponLeft;
 
 protected:
 	virtual void BeginPlay() override;
 
 public:	
-	
+	void EquipWeapon();
+
+#pragma region Getter
+	FORCEINLINE ABaseWeapon* GetEquippedWeaponRight() const { return EquippedWeaponRight; }
+	FORCEINLINE ABaseWeapon* GetEquippedWeaponLeft() const { return EquippedWeaponLeft; }
+
+#pragma endregion Getter
 		
 };
