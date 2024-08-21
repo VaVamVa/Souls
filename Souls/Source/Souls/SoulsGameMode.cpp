@@ -20,5 +20,5 @@ ASoulsGameMode::ASoulsGameMode()
 
 		HUDClass = APlayerHUD::StaticClass();
 	}
-
+	Debug::Log("Init Custom Debug Category");
 }

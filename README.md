@@ -17,7 +17,7 @@ Unreal Engine을 이용한 소울류 모작
 ## GAS
 - [GAS_CodeExample_Blog](https://velog.io/@groot616/3.-Attributes)
 - [GAS_AttributeSt_Blog](https://unialgames.tistory.com/entry/UnrealEngineGamePlayAbilitySystemChapter2)
-- [GAS_Translate_Blog](https://kkadalg.tistory.com/29)
+- [GAS_Translate_Blog_AboutWeaponAttribute](https://kkadalg.tistory.com/29)
 - [GAS_ProjectExample_Blog](https://hvvan.tistory.com/362)
 
 ## Save And Load

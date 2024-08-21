@@ -35,7 +35,6 @@ AMainCharacter::AMainCharacter()
 	GetMesh()->SetSkeletalMesh(Helper::GetAssetFromConstructor<USkeletalMesh>("/Script/Engine.SkeletalMesh'/Game/Characters/Mannequins/Meshes/SKM_Manny.SKM_Manny'"));
 	GetMesh()->SetRelativeLocation(FVector(0, 0, -90.0));
 	GetMesh()->SetRelativeRotation(FRotator(0, -90, 0));
-
 	
 	SpringArm = Helper::CreateSceneComponent<USpringArmComponent>(this, "SpringArm", GetCapsuleComponent());
 	FollowCamera = Helper::CreateSceneComponent<UCameraComponent>(this, "Camera", SpringArm);
