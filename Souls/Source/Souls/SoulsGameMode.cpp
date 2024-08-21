@@ -6,6 +6,7 @@
 #include "Character/MainCharacter/MainCharacterState.h"
 
 #include "Utilities/Helper.h"
+#include "Utilities/Debug.h"
 
 ASoulsGameMode::ASoulsGameMode()
 {
@@ -19,4 +20,5 @@ ASoulsGameMode::ASoulsGameMode()
 
 		HUDClass = APlayerHUD::StaticClass();
 	}
+
 }

@@ -27,6 +27,8 @@
 #include "GAS/SoulsAttributeSet.h"
 #include "MainCharacterState.h"
 
+#include "Logging/LogVerbosity.h"
+
 AMainCharacter::AMainCharacter()
 {
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
@@ -46,7 +48,14 @@ void AMainCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 
-	Debug::CallLineInfo(CALL_INFO);
+	LOG_THIS_LINE;
+	Debug::Log("Log");
+	Debug::Warning("Waring");
+	Debug::Error("Error");
+	Debug::PrintOnScreen("Screen");
+	Debug::CheckVector3("Actor Location", GetActorLocation(), 0);
+	Debug::CheckFloat("Example float", 52.51444);
+	Debug::PrintOnScreen("MC Begin Play", 21, 5.0f);
 }
 
 void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
